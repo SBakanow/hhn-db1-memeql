@@ -3,11 +3,7 @@
 frankhauser:
   first_name: Thomas
   last_name: Frankhauser
-  song: planetary, legendary, islandary
-  album: wait_for_it_ep
 
 two:
   first_name: MyString
   last_name: MyString
-  song: two
-  album: two

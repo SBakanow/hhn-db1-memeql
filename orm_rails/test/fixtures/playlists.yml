@@ -3,11 +3,7 @@
 my_playlist:
   name: My Playlist
   number_songs: 2
-  user: sergej
-  song: planetary, legendary
 
 best_songs:
   name: Best Songs
   number_songs: 1
-  user: marvin
-  song: islandary

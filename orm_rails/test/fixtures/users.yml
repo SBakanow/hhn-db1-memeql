@@ -3,11 +3,7 @@
 sergej:
   name: Sergej
   email: sbakanow@stud.hs-heilbronn.de
-  subscription: one
-  playlist: my_playlist
 
 marvin:
   name: Marvin
   email: msimon1@stud.hs-heilbronn.de
-  subscription: two
-  playlist: best_songs

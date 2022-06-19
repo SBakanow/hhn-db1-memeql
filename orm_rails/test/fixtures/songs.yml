@@ -4,7 +4,6 @@ planetary:
   title: Planetary
   duration: 390
   released_at: 2010-05-12
-  playlist: my_playlist
   artist: frankhauser
   album: wait_for_it_ep
 
@@ -12,7 +11,6 @@ legendary:
   title: Legendary
   duration: 431
   released_at: 2010-11-20
-  playlist: my_playlist
   artist: frankhauser
   album: wait_for_it_ep
 
@@ -20,6 +18,5 @@ islandary:
   title: Islandary
   duration: 410
   released_at: 2010-11-20
-  playlist: my_playlist, best_playlist
   artist: frankhauser
   album: wait_for_it_ep
