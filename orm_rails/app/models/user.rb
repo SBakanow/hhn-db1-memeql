@@ -1,4 +1,4 @@
 class User < ApplicationRecord
   belongs_to :subscription
-  belongs_to :playlist
+  has_many :playlists
 end
