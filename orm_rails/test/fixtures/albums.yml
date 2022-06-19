@@ -5,3 +5,9 @@ wait_for_it_ep:
   genre: Deep House
   released_at: 2011-03-07
   artist: frankhauser
+
+divide:
+  name: DIVIDE
+  genre: Pop
+  released_at: 2017-03-03
+  artist: ed_sheeran

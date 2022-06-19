@@ -2,8 +2,8 @@
 
 one: 
   user: sergej
-  artist: frankhauser
+  artist: frankhauser, ed_sheeran
 
-two:
+three:
   user: marvin
   artist: frankhauser

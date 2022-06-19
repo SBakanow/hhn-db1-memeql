@@ -2,8 +2,8 @@
 
 my_playlist:
   name: My Playlist
-  number_songs: 2
+  number_songs: 3
 
 best_songs:
   name: Best Songs
-  number_songs: 1
+  number_songs: 2
