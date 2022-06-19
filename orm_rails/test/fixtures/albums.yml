@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  genre: MyString
-  released_at: 2022-06-18
-  song: one
-  artist: one
+wait_for_it_ep:
+  name: Wait for it EP
+  genre: Deep House
+  released_at: 2011-03-07
+  song: planetary, legendary, islandary
+  artist: frankhauser
 
 two:
   name: MyString

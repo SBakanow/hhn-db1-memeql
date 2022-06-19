@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  email: MyString
+sergej:
+  name: Sergej
+  email: sbakanow@stud.hs-heilbronn.de
   subscription: one
-  playlist: one
+  playlist: my_playlist
 
-two:
-  name: MyString
-  email: MyString
+marvin:
+  name: Marvin
+  email: msimon1@stud.hs-heilbronn.de
   subscription: two
-  playlist: two
+  playlist: best_songs

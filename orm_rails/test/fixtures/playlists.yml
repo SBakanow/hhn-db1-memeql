@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  number_songs: 1
-  user: one
-  song: one
+my_playlist:
+  name: My Playlist
+  number_songs: 2
+  user: sergej
+  song: planetary, legendary
 
-two:
-  name: MyString
+best_songs:
+  name: Best Songs
   number_songs: 1
-  user: two
-  song: two
+  user: marvin
+  song: islandary

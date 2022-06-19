@@ -1,10 +1,10 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  first_name: MyString
-  last_name: MyString
-  song: one
-  album: one
+frankhauser:
+  first_name: Thomas
+  last_name: Frankhauser
+  song: planetary, legendary, islandary
+  album: wait_for_it_ep
 
 two:
   first_name: MyString
