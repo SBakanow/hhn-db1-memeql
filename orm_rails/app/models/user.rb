@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-  has_many :subscriptions
+  has_many :subscriptions, dependent: :destroy
   has_many :artists, :through => :subscriptions
-  has_many :playlists
+  has_many :playlists, dependent: :destroy
 
   validates :name, presence: true
   validates :email, presence: true

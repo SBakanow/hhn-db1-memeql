@@ -20,5 +20,15 @@ class AccessPatterns
             ed_sheeran = Artist.find_by("last_name = ?", "Sheeran")
             sergej.artists.delete(ed_sheeran)
         end
+
+        def updateNameOfUserMarvin
+            marvin = User.find_by("name = ?", "Marvin")
+            marvin.name = "Marvilicous"
+            marvin.save
+        end
+
+        def deleteEdSheeran
+            Artist.destroy_by("last_name = ?", "Sheeran")
+        end
     end
 end
