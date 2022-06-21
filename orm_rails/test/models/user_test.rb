@@ -6,17 +6,15 @@ class UserTest < ActiveSupport::TestCase
     assert_equal users(:marvin).playlists.first, playlists(:best_songs)
   end
 
-  test "delete Sergejs subscription to Ed Sheeran" do
+  test "delete subscription to artist updates subscription count" do
     assert_equal 2, users(:sergej).subscriptions.count
-    AccessPatterns.deleteSergejsSubscriptionToEdSheeran
+    AccessPatterns.deleteSubscriptionToArtist(users(:sergej), artists(:ed_sheeran))
     assert_equal 1, users(:sergej).subscriptions.count
   end
 
-  test "update name of user Marvin" do
+  test "update name of user" do
     assert_equal "Marvin", users(:marvin).name
-    marvin = User.find_by("name = ?", "Marvin")
-    marvin.name = "Marvilicous"
-    marvin.save
+    AccessPatterns.updateNameOfUser(users(:marvin), "Marvilicous")
     assert_equal "Marvilicous", User.find(users(:marvin).id).name
   end
 end

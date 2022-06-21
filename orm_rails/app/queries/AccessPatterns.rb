@@ -1,50 +1,41 @@
 class AccessPatterns
     class << self 
-        def showAllFrankhauserSongs
-            Song.joins(:artist).where("last_name = ?", "Frankhauser")
+        def showAllSongsOfArtist(last_name)
+            Song.joins(:artist).where("last_name = ?", last_name)
         end
 
-        def createNewFrankhauserSong
-            frankhauser = Artist.find_by("last_name = ?", "Frankhauser")
-            Song.create(title: "Weeper (Original Mix)", duration: 407, released_at: Date.new(2011,3,7), artist: frankhauser)
+        def createNewSong(title, duration, released_at, artist)
+            Song.create(title: title, duration: duration, released_at: released_at, artist: artist)
         end
 
-        def addNewSongToDivideAlbum
-            ed_sheeran = Artist.find_by("last_name = ?", "Sheeran")
-            divide = Album.find_by("name = ?", "DIVIDE")
-            Song.create(title: "Eraser", duration: 228, released_at: Date.new(2017,3,3), artist: ed_sheeran, album: divide)
+        def addNewOrExistingSongToAlbum(song, album)
+            album.songs << song
         end
 
-        def deleteSongIslandary
-            Song.destroy_by("title = ?", "Islandary")
+        def deleteSongByTitle(songtitle)
+            Song.destroy_by("title = ?", songtitle)
         end
         
-        def addNewFrankhauserSongToSergejsPlaylist
-            my_playlist = Playlist.find_by("name = ?", "My Playlist")
-            new_song = Song.find_by("title = ?", "Weeper (Original Mix)")
-            my_playlist.songs << new_song
+        def addNewSongToPlaylist(playlist, song)
+            playlist.songs << song
         end
 
-        def deleteSergejsSubscriptionToEdSheeran
-            sergej = User.find_by("name = ?", "Sergej")
-            ed_sheeran = Artist.find_by("last_name = ?", "Sheeran")
-            sergej.artists.delete(ed_sheeran)
+        def deleteSubscriptionToArtist(user, artist)
+            user.artists.delete(artist)
         end
 
-        def updateNameOfUserMarvin
-            marvin = User.find_by("name = ?", "Marvin")
-            marvin.name = "Marvilicous"
-            marvin.save
+        def updateNameOfUser(user, name)
+            user.name = name
+            user.save
         end
 
-        def updateGenreOfAlbumWaitForItEP
-            wait_for_it_ep = Album.find_by("name = ?", "Wait for it EP")
-            wait_for_it_ep.genre = "Electronic"
-            wait_for_it_ep.save
+        def updateGenreOfAlbum(album, genre)
+            album.genre = genre
+            album.save
         end
 
-        def deleteEdSheeran
-            Artist.destroy_by("last_name = ?", "Sheeran")
+        def deleteArtistByLastName(last_name)
+            Artist.destroy_by("last_name = ?", last_name)
         end
     end
 end
