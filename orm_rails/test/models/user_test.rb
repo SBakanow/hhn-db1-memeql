@@ -4,6 +4,7 @@ class UserTest < ActiveSupport::TestCase
   test "association" do
     assert_equal users(:sergej).playlists.first, playlists(:my_playlist)
     assert_equal users(:marvin).playlists.first, playlists(:best_songs)
+    assert_includes users(:sergej).artists, artists(:ed_sheeran)
   end
 
   test "delete subscription to artist updates subscription count" do
