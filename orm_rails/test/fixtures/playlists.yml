@@ -2,12 +2,10 @@
 
 my_playlist:
   name: My Playlist
-  number_songs: 3
   user: sergej
   songs: planetary, legendary, shape_of_you
 
 best_songs:
   name: Best Songs
-  number_songs: 2
   user: marvin
   songs: legendary, islandary

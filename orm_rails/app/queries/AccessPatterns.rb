@@ -1,6 +1,6 @@
 class AccessPatterns
     class << self 
-        def allFrankhauserSongs
+        def showAllFrankhauserSongs
             Song.joins(:artist).where("last_name = ?", "Frankhauser")
         end
 
@@ -9,13 +9,13 @@ class AccessPatterns
             Song.create(title: "Weeper (Original Mix)", duration: 407, released_at: Date.new(2011,3,7), artist: frankhauser)
         end
         
-        def sergejAddNewFrankhauserSongToPlaylist
+        def addNewFrankhauserSongToSergejsPlaylist
             my_playlist = Playlist.find_by("name = ?", "My Playlist")
             new_song = Song.find_by("title = ?", "Weeper (Original Mix)")
             my_playlist.songs << new_song
         end
 
-        def sergejDeleteSubscriptionToEdSheeran
+        def deleteSergejsSubscriptionToEdSheeran
             sergej = User.find_by("name = ?", "Sergej")
             ed_sheeran = Artist.find_by("last_name = ?", "Sheeran")
             sergej.artists.delete(ed_sheeran)
