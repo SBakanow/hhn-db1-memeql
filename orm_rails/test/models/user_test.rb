@@ -11,6 +11,7 @@ class UserTest < ActiveSupport::TestCase
     assert_equal 2, users(:sergej).subscriptions.count
     AccessPatterns.deleteSubscriptionToArtist(users(:sergej), artists(:ed_sheeran))
     assert_equal 1, users(:sergej).subscriptions.count
+    assert_nil Subscription.joins(:user).joins(:artist).where("users.name = ? AND artists.last_name = ?", "Sergej" ,"Sheeran").first
   end
 
   test "update name of user" do

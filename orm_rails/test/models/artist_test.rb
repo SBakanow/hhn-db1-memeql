@@ -8,9 +8,10 @@ class ArtistTest < ActiveSupport::TestCase
     assert_includes artists(:frankhauser).users, users(:sergej)
   end
 
-  test "delete artist updates artists count" do
+  test "delete artist" do
     assert_equal 3, Artist.count
     AccessPatterns.deleteArtistByLastName("Sheeran")
     assert_equal 2, Artist.count
+    assert_nil Artist.find_by("last_name = ?", "Sheeran")
   end
 end

@@ -6,17 +6,19 @@ class AlbumTest < ActiveSupport::TestCase
     assert_equal albums(:wait_for_it_ep).songs, songs(:planetary, :islandary, :legendary)
   end
 
-  test "add new or existing song to album updates album song count" do
+  test "add new or existing song to album" do
     assert_equal 1, Album.where("name = ?", "DIVIDE").joins(:songs).count
     new_song = AccessPatterns.createNewSong("Eraser", 228, Date.new(2017,3,3), artists(:ed_sheeran))
     AccessPatterns.addNewOrExistingSongToAlbum(new_song, albums(:divide))
     assert_equal 2, Album.where("name = ?", "DIVIDE").joins(:songs).count
+    assert_equal "Eraser", Song.joins(:album).where("name = ?", "DIVIDE").find(new_song.id).title
   end
 
   test "delete song updates album song count" do
     assert_equal 3, Album.where("name = ?", "Wait for it EP").joins(:songs).count
     AccessPatterns.deleteSongByTitle("Islandary")
     assert_equal 2, Album.where("name = ?", "Wait for it EP").joins(:songs).count
+    assert_nil Song.find_by("title = ?", "Islandary")
   end
 
   test "update genre of album" do

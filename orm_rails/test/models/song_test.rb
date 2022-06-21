@@ -10,13 +10,15 @@ class SongTest < ActiveSupport::TestCase
 
   test "create new Frankhauser song updates song count" do
     assert_equal 5, Song.count
-    AccessPatterns.createNewSong("Weeper (Original Mix)", 407, Date.new(2011,3,7), artists(:frankhauser))
+    new_song = AccessPatterns.createNewSong("Weeper (Original Mix)", 407, Date.new(2011,3,7), artists(:frankhauser))
     assert_equal 6, Song.count
+    assert_includes "Weeper (Original Mix)", Song.find(new_song.id).title
   end
 
   test "delete song updates song count" do
     assert_equal 5, Song.count
     AccessPatterns.deleteSongByTitle("Islandary")
     assert_equal 4, Song.count
+    assert_nil Song.find_by("title = ?", "Islandary")
   end
 end
