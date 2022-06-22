@@ -8,10 +8,27 @@ class ArtistTest < ActiveSupport::TestCase
     assert_includes artists(:fankhauser).users, users(:sergej)
   end
 
-  test "delete artist" do
+  test "delete artist updates artist count" do
     assert_equal 3, Artist.count
     AccessPatterns.deleteArtistByLastName("Sheeran")
     assert_equal 2, Artist.count
-    assert_nil Artist.find_by("last_name = ?", "Sheeran")
+  end
+
+  test "delete artist" do
+    assert_not_nil artists(:ed_sheeran) 
+    AccessPatterns.deleteArtistByLastName("Sheeran")
+    assert_nil Artist.find_by(last_name: "Sheeran")
+  end
+
+  test "test lastnames of artist songs" do
+    AccessPatterns.showAllSongsOfArtist("Fankhauser").each do |song|
+      assert_equal "Fankhauser", song.artist.last_name
+    end
+  end
+
+  test "test not existing artist name" do
+    assert_raises do
+      AccessPatterns.showAllSongsOfArtist("Not existing lastname")
+    end
   end
 end

@@ -4,5 +4,7 @@ class Playlist < ApplicationRecord
   has_many :songs, :through => :playlist_songs
   
   validates :name, presence: true
+  validates :user, presence: true
+  validates :songs, presence: true
 end
        

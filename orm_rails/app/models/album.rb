@@ -3,4 +3,6 @@ class Album < ApplicationRecord
   has_many :songs
 
   validates :name, presence: true
+  validates :released_at, presence: true
+  validates :artist, presence: true
 end

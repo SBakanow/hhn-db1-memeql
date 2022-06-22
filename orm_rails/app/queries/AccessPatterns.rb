@@ -5,7 +5,7 @@ class AccessPatterns
         end
 
         def createNewSong(title, duration, released_at, artist)
-            Song.create(title: title, duration: duration, released_at: released_at, artist: artist)
+            Song.create!(title: title, duration: duration, released_at: released_at, artist: artist)
         end
 
         def addNewOrExistingSongToAlbum(song, album)
