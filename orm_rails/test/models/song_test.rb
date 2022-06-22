@@ -8,9 +8,9 @@ class SongTest < ActiveSupport::TestCase
     assert_includes songs(:legendary).playlists, playlists(:best_songs)
   end
 
-  test "create new Frankhauser song updates song count" do
+  test "create new fankhauser song updates song count" do
     assert_equal 5, Song.count
-    new_song = AccessPatterns.createNewSong("Weeper (Original Mix)", 407, Date.new(2011,3,7), artists(:frankhauser))
+    new_song = AccessPatterns.createNewSong("Weeper (Original Mix)", 407, Date.new(2011,3,7), artists(:fankhauser))
     assert_equal 6, Song.count
     assert_includes "Weeper (Original Mix)", Song.find(new_song.id).title
   end

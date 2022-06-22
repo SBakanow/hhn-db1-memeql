@@ -2,10 +2,10 @@ require "test_helper"
 
 class ArtistTest < ActiveSupport::TestCase
   test "associations" do
-    assert_includes artists(:frankhauser).albums, albums(:wait_for_it_ep)
+    assert_includes artists(:fankhauser).albums, albums(:wait_for_it_ep)
     assert_includes artists(:ed_sheeran).albums, albums(:divide)
-    assert_includes artists(:frankhauser).songs, songs(:planetary)
-    assert_includes artists(:frankhauser).users, users(:sergej)
+    assert_includes artists(:fankhauser).songs, songs(:planetary)
+    assert_includes artists(:fankhauser).users, users(:sergej)
   end
 
   test "delete artist" do

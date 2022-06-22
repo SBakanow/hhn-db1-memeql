@@ -1,8 +1,8 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-frankhauser:
+fankhauser:
   first_name: Thomas
-  last_name: Frankhauser
+  last_name: Fankhauser
 
 ed_sheeran:
   first_name: Ed

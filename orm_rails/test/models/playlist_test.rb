@@ -9,7 +9,7 @@ class PlaylistTest < ActiveSupport::TestCase
 
   test "add new song to playlist updates playlist song count" do
     assert_equal 3, Playlist.joins(:user).where("users.name = ?", "Sergej").joins(:songs).count
-    new_song = AccessPatterns.createNewSong("Weeper (Original Mix)", 407, Date.new(2011,3,7), artists(:frankhauser))
+    new_song = AccessPatterns.createNewSong("Weeper (Original Mix)", 407, Date.new(2011,3,7), artists(:fankhauser))
     AccessPatterns.addNewSongToPlaylist(playlists(:my_playlist), new_song)
     assert_equal 4, Playlist.joins(:user).where("users.name = ?", "Sergej").joins(:songs).count
   end

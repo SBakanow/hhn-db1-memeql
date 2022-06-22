@@ -1,7 +1,7 @@
 class AccessPatterns
     class << self 
         def showAllSongsOfArtist(last_name)
-            Song.joins(:artist).where("last_name = ?", last_name)
+            Artist.find_by!(last_name: last_name).songs
         end
 
         def createNewSong(title, duration, released_at, artist)
