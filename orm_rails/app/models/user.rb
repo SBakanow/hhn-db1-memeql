@@ -6,5 +6,14 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+
+  def self.deleteSubscriptionToArtist(user, artist)
+    user.artists.delete(artist)
+  end
+
+  def self.updateNameOfUser(user, name)
+    user.name = name
+    user.save
+  end
 end
  

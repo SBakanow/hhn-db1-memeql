@@ -6,5 +6,13 @@ class Artist < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
+
+  def self.findAllSongsOfArtist(last_name)
+    self.find_by!(last_name: last_name).songs
+  end
+
+  def self.deleteArtistByLastName(last_name)
+    self.destroy_by(last_name: last_name)
+  end
 end
  
