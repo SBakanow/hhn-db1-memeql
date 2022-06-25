@@ -4,10 +4,6 @@
 
 ![ERD](erd.svg)
 
-## Functional Dependencies
-
-`TODO`
-
 ## Object-Relational Model
 
 - open terminal
